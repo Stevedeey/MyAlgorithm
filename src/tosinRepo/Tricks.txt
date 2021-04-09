@@ -1,0 +1,42 @@
+
+//Copy an array into a list.
+
+  public static void main(String args[]) {
+       String[] array = {"a", "b", "c", "d", "e"};
+
+       //Method 1
+
+ List<String> list = Arrays.asList(array);
+      System.out.println(list);
+
+      //Method 2
+      List<String> list1 = new ArrayList<String>();
+      Collections.addAll(list1, array);
+      System.out.println(list1);
+
+      //Method 3
+      List<String> list2 = new ArrayList<String>();
+      for(String text:array) {
+         list2.add(text);
+      }
+
+
+
+      // Deleting an item from an array
+    public class RemoveArrayElement {
+      public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int[] numArray = {6, 8, 10, 34, 12, 2};
+
+        System.out.print("Enter Element to be deleted: ");
+        int element = in.nextInt();
+
+        for(int i = 0; i < numArray.length; i++){
+          if(numArray[i] == element){
+            // shift elements to the left
+            for(int j = i; j < numArray.length - 1; j++){
+              numArray[j] = numArray[j+1];
+            }
+            break;
+          }
+        }
