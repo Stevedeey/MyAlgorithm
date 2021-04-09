@@ -19,11 +19,12 @@ public class CountSheep {
 
         }
 
-        String[] arr = true_false.split(",");
+        String[] arrayOfTrueFalse = true_false.split(",");
         int count = 0;
         String tr = "true";
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].equals(tr)) {
+        for (int i = 0; i < arrayOfTrueFalse.length; i++) {
+
+            if (arrayOfTrueFalse[i].equals(tr)) {
                 count++;
             }
         }
