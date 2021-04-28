@@ -9,7 +9,7 @@ public class FirstNonReapeatingLetter {
         for (int i = 0; i < str.length(); i++) {
             String newString  = String.valueOf(str.charAt(i)).toLowerCase();
             String toLowerCase = str.toLowerCase();
-            if (toLowerCase.indexOf(newString)==toLowerCase.lastIndexOf(newString))
+            if (str.indexOf(newString)==str.lastIndexOf(newString))
             {
                letter =  String.valueOf(str.charAt(i));
                break;

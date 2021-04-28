@@ -1,2 +1,4 @@
-package tosinRepo;public class TestGenerics {
+package tosinRepo;
+
+public class TestGenerics {
 }

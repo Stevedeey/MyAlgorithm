@@ -14,4 +14,5 @@ public class ToCapital {
         }
         return value.substring(0, value.length()-1);
     }
+
 }
