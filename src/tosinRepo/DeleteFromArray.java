@@ -1,34 +1,33 @@
 package tosinRepo;
+
 import java.util.Scanner;
 
 public class DeleteFromArray {
-   public static  int[] deleteFrom(int[] arr) {
-       Scanner scanner = new Scanner(System.in);
-       System.out.println("The current Array state..");
-       for (int i = 0; i < arr.length; i++) {
-           System.out.print(arr[i]+" \n");
-       }
-       System.out.println("Specify the number to remove ");
-       int number = scanner.nextInt();
-       for(int i = 0; i < arr.length; i++)
-       {
-            if(arr[i]==number)
-            {
-                for (int j = i; j < arr.length-1; j++) {
-                    arr[j] = arr[j+1];
+    public static int[] deleteFrom(int[] arr) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("The current Array state..");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " \n");
+        }
+        System.out.println("Specify the number to remove ");
+        int number = scanner.nextInt();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == number) {
+                for (int j = i; j < arr.length - 1; j++) {
+                    arr[j] = arr[j + 1];
 
                 }
                 break;
             }
 
-       }
-       return  arr;
-   }
+        }
+        return arr;
+    }
 
     public static void main(String[] args) {
         System.out.println("Hello World");
         System.out.println("The state now");
-      int[] arr = deleteFrom(new int[] {5,6,9,7,4});
+        int[] arr = deleteFrom(new int[]{5, 6, 9, 7, 4});
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }

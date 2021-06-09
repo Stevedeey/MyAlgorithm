@@ -5,16 +5,16 @@ public class Factorial {
         // code goes here
 
         int fact = 1;
-        for(int i = 1; i <=num; i++)
-        {
-            fact = fact * i ;
+        for (int i = 1; i <= num; i++) {
+            fact = fact * i;
         }
-            return fact;
+        return fact;
     }
+
     public static int FirstFactorial2(int num) {
         // code goes here
-        if(num <=1) return 1;
-        else  return num * FirstFactorial( num - 1);
+        if (num <= 1) return 1;
+        else return num * FirstFactorial(num - 1);
 
     }
 

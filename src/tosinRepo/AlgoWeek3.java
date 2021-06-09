@@ -3,19 +3,19 @@ package tosinRepo;
 import java.util.*;
 
 public class AlgoWeek3 {
-    public static Integer packArray( List<Integer> arr ) {
+    public static Integer packArray(List<Integer> arr) {
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
         Integer result = 0;
-        for(int i = 0; i < arr.size() - 1; i++){
-            list1.add(arr.get(i) + arr.get(i+1));
+        for (int i = 0; i < arr.size() - 1; i++) {
+            list1.add(arr.get(i) + arr.get(i + 1));
             i = i + 1;
         }
-        for(int i = 0; i < list1.size() - 1; i++){
-            list2.add(list1.get(i) * list1.get(i+1));
+        for (int i = 0; i < list1.size() - 1; i++) {
+            list2.add(list1.get(i) * list1.get(i + 1));
             i = i + 1;
         }
-        for(int i = 0; i < list2.size(); i++){
+        for (int i = 0; i < list2.size(); i++) {
             result += list2.get(i);
         }
         return result;
@@ -33,8 +33,7 @@ public class AlgoWeek3 {
         return longestWorld;
     }
 
-    public static  void highestString()
-    {
+    public static void highestString() {
 
         List<String> listCities = Arrays.asList("London", "Paris", "New York",
                 "Washington", "Tokyo", "Rio De Janero", "Bangalore");
@@ -52,7 +51,7 @@ public class AlgoWeek3 {
 
     public static void main(String[] args) {
 //       highestString();
-        System.out.println(packArray(List.of(1,3,45,6,6)));
+        System.out.println(packArray(List.of(1, 3, 45, 6, 6)));
 
 
     }

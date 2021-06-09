@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class C {
-   public static void compThings()
-   {
+    public static void compThings() {
 //       int[] numbers = new int[3];
 //       numbers[0] = 45;
 //       numbers[0] = 20;
@@ -17,9 +16,7 @@ public class C {
 //       System.out.println(Arrays.toString(numbers));
 
 
-
-
-   }
+    }
 
     public static void main(String[] args) {
 

@@ -23,11 +23,11 @@ public class CharCount {
         return true;
     }
 
-    public void doSomething()
-    {
-        int[] arra = {5,6,7,8,9};
-       int fre =  Collections.frequency(Arrays.asList(arra),9);
+    public void doSomething() {
+        int[] arra = {5, 6, 7, 8, 9};
+        int fre = Collections.frequency(Arrays.asList(arra), 9);
     }
+
     public static void main(String[] args) {
         System.out.println(characterCount(new String[]{"hello", "world", "leetcode"}, "welldonehoneyr"));
     }

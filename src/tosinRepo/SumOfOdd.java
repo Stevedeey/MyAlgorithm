@@ -13,12 +13,12 @@ public class SumOfOdd {
     *Calculate the row sums of this triangle from the row index (starting at index 1) e.g.:
     * */
 
-        public static int rowSumOddNumbers(int n) {
-            //TODO
+    public static int rowSumOddNumbers(int n) {
+        //TODO
 
-            return (int)Math.pow(n, 3);
+        return (int) Math.pow(n, 3);
 
-        }
+    }
 
     public static void main(String[] args) {
         System.out.println(rowSumOddNumbers(2));

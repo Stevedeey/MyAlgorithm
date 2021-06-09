@@ -1,6 +1,8 @@
 
 package tosinRepo;
+
 import java.math.*;
+
 public class PrimeNumber {
 
     public static String numPrimorial(int n) {

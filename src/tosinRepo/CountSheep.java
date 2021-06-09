@@ -5,13 +5,12 @@ import java.util.Collections;
 
 public class CountSheep {
 
-/*
-*           Consider an array/list of sheep where some sheep may be missing from their place
-* .          We need a function that counts the number of sheep present in the array (true means present).
-*
-*
-* */
-
+    /*
+     *           Consider an array/list of sheep where some sheep may be missing from their place
+     * .          We need a function that counts the number of sheep present in the array (true means present).
+     *
+     *
+     * */
 
 
     public static int countSheeps2(Boolean[] arrayOfSheeps) {
@@ -43,11 +42,9 @@ public class CountSheep {
     }
 
 
-    public static  boolean isFound(String chara ,String ar)
-    {
+    public static boolean isFound(String chara, String ar) {
         for (int i = 0; i < ar.length(); i++) {
-            if(ar.contains(chara))
-            {
+            if (ar.contains(chara)) {
                 return false;
             }
         }
@@ -55,11 +52,10 @@ public class CountSheep {
     }
 
 
-
     public static void main(String[] args) {
         System.out.println(countSheeps(new Boolean[]{false, true, true, false, true}));
         System.out.println(countSheeps2(new Boolean[]{false, true, true, false, true, true, true}));
-       // System.out.println(countSheep(new Boolean[]{false, true, true, false, true, true, true}));
+        // System.out.println(countSheep(new Boolean[]{false, true, true, false, true, true, true}));
 
     }
 }

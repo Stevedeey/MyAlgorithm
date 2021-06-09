@@ -5,35 +5,33 @@ import java.security.spec.PSSParameterSpec;
 
 public class DNA {
     public static String dnaComplement(String dna) {
-            String result = "";
-            String[] arr = dna.split("");
-         String A ="A";
-            for(int i = 0; i < arr.length; i++){
+        String result = "";
+        String[] arr = dna.split("");
 
-                switch (arr[i].toString())
-                {
-                    case "A":
-                        result += "T";
-                        break;
-                    case "C":
-                        result += "G";
-                        break;
-                    case "T":
-                        result += "A";
-                        break;
-                    case "G":
-                        result += "C";
-                        break;
-                    default:
-                        result = "";
-                        break;
+        for (int i = 0; i < arr.length; i++) {
 
-                }
-
+            switch (arr[i].toString()) {
+                case "A":
+                    result += "T";
+                    break;
+                case "C":
+                    result += "G";
+                    break;
+                case "T":
+                    result += "A";
+                    break;
+                case "G":
+                    result += "C";
+                    break;
+                default:
+                    result = "";
+                    break;
             }
 
+        }
 
-            return result;
+
+        return result;
 
     }
 

@@ -32,14 +32,14 @@ For arr = [1, 2, 3, 4, 5, 6, 7, 8], the output should be 186.
 
 We have [1, 2, 3, 4, 5, 6, 7, 8] -> [3, 7, 11, 15] -> [21, 165] -> [186], so the answer is 186.
   */
-    public static Integer packArray( List<Integer> arr ) {
+    public static Integer packArray(List<Integer> arr) {
         int length = arr.size();
 
         //as long as length is greater than one then we move to the next iteration.
-        for (int iteration = 1; length > 1; iteration++){
-            for (int j = 0, k = 0; j < length; j+= 2, k++) {
+        for (int iteration = 1; length > 1; iteration++) {
+            for (int j = 0, k = 0; j < length; j += 2, k++) {
                 int replacement;
-                if ((iteration%2) != 0) //if iteration is odd then addition
+                if ((iteration % 2) != 0) //if iteration is odd then addition
                     replacement = arr.get(j) + arr.get(j + 1);
                 else //if iteration is even then multiplication
                     replacement = arr.get(j) * arr.get(j + 1);

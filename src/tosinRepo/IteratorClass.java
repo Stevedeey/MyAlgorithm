@@ -3,24 +3,20 @@ package tosinRepo;
 import java.util.*;
 
 public class IteratorClass {
-    public static  int countS(Boolean[] sheepArray)
-    {
-        return  Collections.frequency(Arrays.asList(sheepArray),true);
+    public static int countS(Boolean[] sheepArray) {
+        return Collections.frequency(Arrays.asList(sheepArray), true);
     }
-    public static  int countS2(Boolean[] sheepArray)
-    {
+
+    public static int countS2(Boolean[] sheepArray) {
         int count = 0;
         for (int i = 0; i < sheepArray.length; i++) {
-           if(sheepArray[i].equals(true))
-           {
-               count++;
-           }
+            if (sheepArray[i].equals(true)) {
+                count++;
+            }
 
         }
         return count;
     }
-
-
 
 
     public static void main(String[] args) {

@@ -44,7 +44,7 @@ Examples:
         if (first.length() != second.length())
             return -1;
 
-        return (second+second).indexOf(first);
+        return (second + second).indexOf(first);
     }
 
     public static void main(String[] args) {
