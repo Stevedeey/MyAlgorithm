@@ -4,15 +4,17 @@ import javax.lang.model.type.MirroredTypeException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Testing {
+public class DeleteNth {
     public static void main(String[] args) {
 
 //        EnoughIsEnough.deleteNth(new int[] {20,37,20,21}, 1) // return [20,37,21]
 //        EnoughIsEnough.deleteNth(new int[] {1,1,3,3,7,2,2,2,2}, 3) // return [1, 1, 3, 3, 7, 2, 2, 2]
 //        System.out.println(deleteNth(new int[] {4,7,15,13,12,7,11,2,1,17,3,11,8,1,9,12,2,12}, 9 ));
-        System.out.println(deleteNthi(new int[] {50,8,30,45,34,48,6,37,10,11,11,22,49,24,17,45,49,5,18,19,21,40,23,8,2,46,37,21,33,24,29,44,49,19,0,0,2,14,15,47,6,34,21,24,10,18,3,0,15,13,37}, 2 ));
+      //  System.out.println(deleteNthi(new int[] {50,8,30,45,34,48,6,37,10,11,11,22,49,24,17,45,49,5,18,19,21,40,23,8,2,46,37,21,33,24,29,44,49,19,0,0,2,14,15,47,6,34,21,24,10,18,3,0,15,13,37}, 2 ));
 
     }
+//10,56,64
+
 
 
     static int[] deleteNthj(int[] elements, int maxOccurrences) {
@@ -50,7 +52,7 @@ public class Testing {
             Map<Integer,Integer> counterMap = new LinkedHashMap<>();
             Set<Integer> newSet = new LinkedHashSet<>();
 
-            for(int i =0; i<elements.length;i++){
+            for(int i =0; i < elements.length;i++){
                 map1.put(elements[i],0);
                 newSet.add(elements[i]);
                 counterMap.put(elements[i],1);
@@ -80,16 +82,4 @@ public class Testing {
         }
 
 
-//    public  int countOfNo(String words, Character toFind){
-//        Map<Character, Integer> map =new HashMap<>();
-//        for ( Character toFind:words.toCharArray()) {
-//            if(map.containsKey(toFind))
-//            {
-//                map.put(toFind,map.get(toFind));
-//            }
-//            else {
-//                map.put(toFind,1);
-//            }
-//        }
-//    }
 }

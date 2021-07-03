@@ -1,6 +1,6 @@
 package selfpractice;
 
-public class FixBuzz {
+public class FixBuzzGreedyDice {
     public static void fizzbuzz() {
         for (int i = 1; i <= 15; i++) {
             if (i % (3 * 5) == 0) System.out.println("FizzBuzz");

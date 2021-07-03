@@ -1,10 +1,10 @@
 package selfpractice;
 
-public class mArray {
+public class Array {
     private int[] firstArray;
     private int count; //
 
-    public mArray(int length) {
+    public Array(int length) {
         firstArray = new int[length];
     }
 
