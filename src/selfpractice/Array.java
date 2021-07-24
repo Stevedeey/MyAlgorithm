@@ -1,5 +1,8 @@
 package selfpractice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Array {
     private int[] firstArray;
     private int count; //
@@ -16,7 +19,6 @@ public class Array {
             //copy all the existing items
             for (int i = 0; i < count; i++) {
                 secondArray[i] = firstArray[i];
-                //set "firstArray" to the second array
 
             }
             firstArray = secondArray;

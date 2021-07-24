@@ -1,2 +1,5 @@
-package New;public interface trying {
+package New;
+
+public interface trying {
+
 }

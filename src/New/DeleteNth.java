@@ -9,7 +9,7 @@ public class DeleteNth {
 
 //        EnoughIsEnough.deleteNth(new int[] {20,37,20,21}, 1) // return [20,37,21]
 //        EnoughIsEnough.deleteNth(new int[] {1,1,3,3,7,2,2,2,2}, 3) // return [1, 1, 3, 3, 7, 2, 2, 2]
-//        System.out.println(deleteNth(new int[] {4,7,15,13,12,7,11,2,1,17,3,11,8,1,9,12,2,12}, 9 ));
+        System.out.println(deleteNth(new int[] {4,7,15,13,12,7,11,2,1,17,3,11,8,1,9,12,2,12}, 9 ));
       //  System.out.println(deleteNthi(new int[] {50,8,30,45,34,48,6,37,10,11,11,22,49,24,17,45,49,5,18,19,21,40,23,8,2,46,37,21,33,24,29,44,49,19,0,0,2,14,15,47,6,34,21,24,10,18,3,0,15,13,37}, 2 ));
 
     }
@@ -73,11 +73,11 @@ public class DeleteNth {
                 }
             }
 
-            int[] finalArray = new int[newList.size()];
-            for(int i =0; i<finalArray.length; i++){
-                finalArray[i] = newList.get(i);
-            }
-            return finalArray;
+//            int[] finalArray = new int[newList.size()];
+//            for(int i =0; i<finalArray.length; i++){
+//                finalArray[i] = newList.get(i);
+//            }
+            return newList.stream().mapToInt(i ->i).toArray();
 
         }
 

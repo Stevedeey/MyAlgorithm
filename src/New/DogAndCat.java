@@ -43,14 +43,12 @@ public class DogAndCat {
         if (humanYears >= 1) {
             catYears += 15;
             dogYears += 15;
-            count++;
 
         }
 
         if (humanYears >= 2) {
             catYears += 9;
             dogYears += 9;
-            count2++;
         }
         for (int i = humanYears - 2; i > 0; i--) { //first two years already catered for thus humansyears - 2
             catYears += 4;
