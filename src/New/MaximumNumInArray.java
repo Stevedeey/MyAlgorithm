@@ -6,15 +6,15 @@ import java.util.List;
 
 public class MaximumNumInArray {
     public static void main(String[] args) {
-      int max =   max2(new int[]{34,1000,567,34,555,7});
-        System.out.println("maximum num "+ max);
+//      int max =   max2(new int[]{34,1000,567,34,555,7});
+//        System.out.println("maximum num "+ max);
 
         //largest
 
         int[] arrLa = {1,2,4,5,6,7,8};
         int len = arrLa.length;
 
-        System.out.println(largest(arrLa, len));
+        System.out.println(largest(arrLa));
 
 
     }
@@ -31,11 +31,10 @@ public class MaximumNumInArray {
 
        return  max;
     }
-    static int largest(int []arr,
-                       int n)
+    static int largest(int []arr)
     {
         Arrays.sort(arr);
-        return arr[n - 1];
+        return arr[arr.length - 1];
     }
 
 }

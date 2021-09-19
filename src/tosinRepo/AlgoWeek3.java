@@ -35,8 +35,9 @@ public class AlgoWeek3 {
 
     public static void highestString() {
 
-        List<String> listCities = Arrays.asList("London", "Paris", "New York",
+      List<String> listCities = Arrays.asList("London", "Paris", "New York",
                 "Washington", "Tokyo", "Rio De Janero", "Bangalore");
+
 
         Comparator<String> comparator = new Comparator<String>() {
             public int compare(String s1, String s2) {
@@ -49,9 +50,28 @@ public class AlgoWeek3 {
         System.out.println("Most-letter city name: " + max);
     }
 
+
+    public static void highestString2() {
+        List<String> lst = List.of("London", "Amerjkldfca");
+
+        Comparator<String> comp = new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length() - o2.length();
+            }
+        };
+
+        String maximum = Collections.max(lst, comp);
+
+        System.out.println("The maximum number is "+ maximum);
+
+    }
+
     public static void main(String[] args) {
-//       highestString();
-        System.out.println(packArray(List.of(1, 3, 45, 6, 6)));
+
+        //System.out.println(packArray(List.of(1, 3, 45, 6, 6)));
+        //highestString();
+        highestString();
 
 
     }

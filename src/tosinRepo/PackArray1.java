@@ -1,6 +1,7 @@
 package tosinRepo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PackArray1 {
@@ -25,5 +26,30 @@ public class PackArray1 {
 
     public static void main(String[] args) {
 
+        int[] arr =  {1,2,3,4};
+        System.out.println(packArray(arr));
+
     }
+
+    private static  int packArray(int[] inputArray){
+        List<Integer> integerList = new ArrayList<>();
+        List<Integer> multiList = new ArrayList<>();
+
+        int sum = 0;
+        for (int i = 0; i < inputArray.length; i++) {
+            integerList.add(inputArray[i] + inputArray[i + 1]);
+            i++;
+        }
+        for (int i = 0; i < integerList.size() - 1; i++) {
+            multiList.add(integerList.get(i) + integerList.get(i+1));
+            i++;
+        }
+
+        for (int i = 0; i < multiList.size(); i++) {
+            sum += multiList.get(i);
+        }
+        return sum;
+    }
+
+
 }

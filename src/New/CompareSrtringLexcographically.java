@@ -1,5 +1,8 @@
 package New;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CompareSrtringLexcographically {
 
     static String newlyString(String str, int k){
@@ -41,6 +44,10 @@ public class CompareSrtringLexcographically {
 
 
     static String newString(String s, int k) {
+        List<Integer> lst = new ArrayList<>();
+
+
+        lst.stream().mapToInt(o->o).toArray();
         // new string
         String X = "";
 
@@ -67,6 +74,7 @@ public class CompareSrtringLexcographically {
                 if (s.charAt(i) == temp) {
 
                     s = s.substring(0, i) + s.substring(i + 1);
+                    
                     //s.erase(s.begin() + i);
                     break;
                 }
@@ -78,7 +86,7 @@ public class CompareSrtringLexcographically {
 
     public static void main(String[] args) {
         //gaurang  agangru
-        System.out.println(newlyString("gaurang", 3));
+        System.out.println(newlyString("gaurang", 2));
     }
 
 }

@@ -35,19 +35,28 @@ public class DNA {
 
     }
 
+    public  static  String doDNA(String str){
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) == 'A'){
+                builder.append("T");
+            }else  if(str.charAt(i) == 'C'){
+                builder.append("G");
+            }
+            else if(str.charAt(i) == 'T'){
+                builder.append("A");
+            }
+            else if(str.charAt(i) == 'G'){
+                builder.append("C");
+            }
+        }
+        return builder.toString();
+    }
+
 
     public static void main(String[] args) {
         System.out.println(dnaComplement("ACTG"));
+        System.out.println("::String Builder::::"+doDNA("ACTG"));
     }
 }
-
-//System.out.println(arr[i]);
-//        if(arr[i].equals("A")){
-//        result += "T";
-//        }else if(arr[i].equals("C")){
-//        result += "G";
-//        }else if(arr[i].equals("T")){
-//        result += "A";
-//        }else if(arr[i].equals("G")){
-//        result += "C";
-//        }

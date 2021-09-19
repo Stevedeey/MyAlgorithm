@@ -1,6 +1,6 @@
 package New;
 
-import java.util.Stack;
+import java.util.*;
 
 public class SimpleCalculastor {
     public static void main(String[] args) {
@@ -9,14 +9,37 @@ public class SimpleCalculastor {
         //Input: s = "(1+(4+5+2)-3)+(6+8)"
    // System.out.println(calculate("1 + 1"));
      //   System.out.println(  calculate(" 2-1 + 2 "));
-        System.out.println(calculate("1111+(4+5+2)-3)+(6+8)"));
+     // System.out.println(calculate("222+(4+5+2)-3)+(6+8)"));
+        //System.out.println(calculate("2+(1+(4+5+2)-3)+(6+8)"));
 //        int ch = '8' ;
 //        System.out.println(ch -'0');
+        System.out.println(Distinct("eeeemmmmmmmmm1000"));
+
+        System.out.println(largestNumber(363223311));
 
 
     }
 
+    public static boolean Distinct(String s) {
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            set.add(s.charAt(i)+"");
+        }
+       return set.size()>=10 ? true : false;
 
+
+    }
+
+    public static int largestNumber(int num) {
+
+        String newString = String.valueOf(num);
+        List<Integer> newInt = new ArrayList<>();
+        for(int i=0; i< newString.length()-1; i++){
+            var t = newInt.add(Integer.valueOf(newString.charAt(i)+""+newString.charAt(i+1)));
+        }
+        Collections.sort(newInt);
+        return newInt.get(newInt.size()-1);
+    }
 
 
     public static int calculate(String s){
