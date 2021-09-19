@@ -24,10 +24,35 @@ public class PackArray1 {
 
     }
 
+    interface Dog {
+        void saySomething(String some);
+    }
+
+
     public static void main(String[] args) {
 
-        int[] arr =  {1,2,3,4};
-        System.out.println(packArray(arr));
+        Dog dog = new Dog() {
+
+            @Override
+            public void saySomething(String some) {
+            System.out.println( "I have nothing to say: " + some);
+            }
+        };
+
+        dog.saySomething("Dare");
+
+//        int [] arr = new int[2];
+//        try {
+//            System.out.println("fourth Index: "+ arr[3]);
+//        }catch (ArrayIndexOutOfBoundsException ex){
+//            System.out.println("Exception Caught!! ");
+//        }
+//        catch (Exception exception){
+//            System.out.println("Caught Exception ");
+//        }finally {
+//            arr[0] = 6;
+//            System.out.println("Accessing First Index "+ arr[0]);
+//        }
 
     }
 
