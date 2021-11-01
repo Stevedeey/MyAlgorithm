@@ -4,31 +4,41 @@ import java.util.*;
 
 public class SimpleCalculastor {
     public static void main(String[] args) {
-        //Input: s = "1 + 1"
-        //Input: s = " 2-1 + 2 "
-        //Input: s = "(1+(4+5+2)-3)+(6+8)"
-   // System.out.println(calculate("1 + 1"));
-     //   System.out.println(  calculate(" 2-1 + 2 "));
-     // System.out.println(calculate("222+(4+5+2)-3)+(6+8)"));
+
+        int n1 = 0, n2 = 1, n3 = 0;
+
+
+        System.out.println(n1 + "" + n2);
+        fibonacci(5);
+
+
+
+        // System.out.println(calculate("222+(4+5+2)-3)+(6+8)"));
         //System.out.println(calculate("2+(1+(4+5+2)-3)+(6+8)"));
-//        int ch = '8' ;
-//        System.out.println(ch -'0');
-        System.out.println(Distinct("eeeemmmmmmmmm1000"));
 
-        System.out.println(largestNumber(363223311));
+
+
 
 
     }
 
-    public static boolean Distinct(String s) {
-        Set<String> set = new HashSet<>();
-        for (int i = 0; i < s.length(); i++) {
-            set.add(s.charAt(i)+"");
+
+    public static void fibonacci(int num){
+
+        int n1 = 0, n2 = 1, n3 = 0;
+        if(num > 0){
+            n3 = n2 + n1;
+            n1 = n2;
+            n2 = n3;
+
+            System.out.println(" "+n3);
+            fibonacci(num - 1);
         }
-       return set.size()>=10 ? true : false;
-
-
     }
+
+
+
+
 
     public static int largestNumber(int num) {
 
@@ -40,6 +50,8 @@ public class SimpleCalculastor {
         Collections.sort(newInt);
         return newInt.get(newInt.size()-1);
     }
+
+
 
 
     public static int calculate(String s){
@@ -59,6 +71,7 @@ public class SimpleCalculastor {
                 {
                     num = num * 10 + s.charAt(i) - '0';
                     i++;
+
                 }
                 sum += num   * sign;
 
@@ -89,39 +102,13 @@ public class SimpleCalculastor {
         return sum;
     }
 
-//    public static int calculate(String s) {
-//        int sum = 0;
-//        int sign = 1;
-//
-//        Stack<Integer> st = new Stack<>();
-//
-//        for (int i = 0; i < s.length(); i++) {
-//            char ch = s.charAt(i);
-//
-//            if (Character.isDigit(ch)) {
-//
-//                int val = 0;
-//                while (i < s.length() && Character.isDigit(s.charAt(i))) {
-//                    val = val * 10  + (s.charAt(i) -'0');
-//                    i++;
-//                }
-//                i--;
-//                val = val * sign;
-//                sign = 1;
-//                sum += val;
-//            } else if (ch == '(') {
-//                st.push(sum);
-//                st.push(sign);
-//                sum = 0;
-//                sign = +1;
-//            } else if (ch == ')') {
-//                sum *= st.pop();
-//                sum += st.pop();
-//            } else if (ch == '-') {
-//                sign *= -1;
-//            }
-//        }
-//
-//        return sum;
-//    }
+    public static boolean Distinct2(String str){
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < str.length(); i++) {
+            set.add(str.charAt(i)+"");
+        }
+        return set.size()>10 ? true : false;
+    }
+
+
 }

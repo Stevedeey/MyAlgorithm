@@ -3,6 +3,7 @@ package tosinRepo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class PackArray1 {
     public static Integer packArray(List<Integer> arr) {
@@ -24,22 +25,85 @@ public class PackArray1 {
 
     }
 
-    interface Dog {
+    @FunctionalInterface
+    interface SaySomethingAnonymously {
         void saySomething(String some);
+
     }
 
+    @FunctionalInterface
+    interface SaySomethingWithLambda{
+        void saySomething(String name, int age);
+    }
+
+    @FunctionalInterface
+    interface Addition{
+        int add(int a, int b);
+    }
 
     public static void main(String[] args) {
 
-        Dog dog = new Dog() {
+        //:: MESSING WITH 2D ARRAY
 
-            @Override
-            public void saySomething(String some) {
-            System.out.println( "I have nothing to say: " + some);
-            }
+        int [] [] twoD = { {1,2,3},
+                           {4,5,6},
+                           {7,8,9}
         };
+        int [][] twoDD = new int[3][3];
 
-        dog.saySomething("Dare");
+        Scanner scanner =  new Scanner(System.in);
+
+        for (int i = 0; i < twoDD.length; i++) {
+            for (int j = 0; j < twoDD[i].length; j++) {
+                System.out.println("Enter a number >> "+ twoD[i][j]);
+               twoDD[i][j] =  scanner.nextInt();
+            }
+        }
+
+        for (int i = 0; i < twoDD.length; i++) {
+            System.out.println(" ");
+            for (int j = 0; j < twoDD[i].length; j++) {
+                System.out.print(" "+ twoDD[i][j]);
+            }
+        }
+
+
+
+
+//        SaySomethingAnonymously anonymously = new SaySomethingAnonymously() {
+//
+//            @Override
+//            public void saySomething(String some) {
+//            System.out.println( "I have nothing to say: " + some);
+//            }
+//        };
+//
+//        anonymously.saySomething("Dare");
+//
+//
+//        // With Lambda
+//
+//        SaySomethingWithLambda lambda = (String name, int age) -> {
+//            System.out.println("The name of this fellow is "+ name + "and he's aged "+ age);
+//        };
+//
+//        lambda.saySomething("Damola", 24);
+//
+//
+//        // With Lambda and with return keyword
+//
+//        Addition addition = (a, b) -> {
+//            return (a + b);
+//        };
+//
+//        //OR
+//        // With Lambda and without return keyword
+//
+//       // Addition addition = (a, b) -> (a+b);
+//
+//        int answer = addition.add(100,100);
+//
+//        System.out.printf("The result of addition is: %s", answer);
 
 //        int [] arr = new int[2];
 //        try {

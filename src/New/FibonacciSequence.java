@@ -14,6 +14,7 @@ public class FibonacciSequence {
             n2 = n3;
 
             System.out.println("" + n3);
+
             generateFibSequence(count - 1);
         }
 
@@ -40,5 +41,22 @@ public class FibonacciSequence {
     public static void main(String[] args) {
         System.out.println(n1 + " " + n2);
         generateFibSequence(8);
+    }
+
+
+    public static int secondMax(int[] array) {
+
+        int max = 0, preMax = 0;
+        for (int i = 0; i <array.length; i++) {
+            if(array[i] > max){
+                preMax = max;
+                max = array[i];
+            }
+            if(array[i] < max && array[i] > preMax){
+                preMax = array[i];
+            }
+
+        }
+        return preMax;
     }
 }

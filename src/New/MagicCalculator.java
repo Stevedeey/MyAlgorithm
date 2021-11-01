@@ -9,12 +9,16 @@ public class MagicCalculator {
         //Input: s = "(1+(4+5+2)-3)+(6+8)"
         //System.out.println("The result: " + calculate("2+(4+5+2)-3)+(6+8)"));
 
-        System.out.println(calculate("22+(1+(4+5+2)-3)+(6+8)"));
+  //      System.out.println(calculate("22+(1+(4+5+2)-3)+(6+8)"));
 
 //        System.out.println(secondHighest(new int[]{2,3,5,2,4,5,6}));
 //
 //        generateFibonacci(10);
+//        int [] arr = {5,6,4,8,4,14,5,8,9,8,4};
+//        peakElement(arr);
     }
+    
+
 
     public static  int calculate (String s){
         int sum = 0, sign = 1;
@@ -51,6 +55,8 @@ public class MagicCalculator {
             if(s.charAt(i) == ')'){
                 sum = stack.pop() * sum;  //The last sum * the last sign
                 sum += stack.pop();
+                
+
             }
         }
         return sum;
