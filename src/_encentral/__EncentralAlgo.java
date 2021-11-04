@@ -1,14 +1,14 @@
 package _encentral;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class __EncentralAlgo {
 
     public static void main(String[] args) {
-        int [] arr = { 66,2,7,11,15};
-        var result = Arrays.toString(twoSum(arr,9));
+//        int [] arr = { 66,2,7,11,15};
+//        var result = Arrays.toString(twoSum(arr,9));
+
+        String result = distinct("abcdefghijklmnop");
         System.out.println("Result: "+ result);
 
 
@@ -30,5 +30,69 @@ public class __EncentralAlgo {
         }
 
         return new int[2];
+    }
+
+    //Longest
+    private static int longest(int num){
+        int highest = 0, index = 0;
+        String strNum = String.valueOf(num);
+        for (int i = 0; i < strNum.length(); i++) {
+            if(i < strNum.length() - 1 ){
+                int value = Integer.parseInt(strNum.charAt(i) + "" +strNum.charAt(i + 1));
+                if(value >= highest){
+                    highest = value;
+                }
+            }
+        }
+        return Integer.parseInt(strNum.charAt(index) +"" +strNum.charAt(index + 1));
+    }
+
+    //String challenge
+    public static String stringChallenge(String[] str){
+
+        String[] dictionary = str[1].split(",");
+        List<String>  list = new ArrayList<>();
+        for (String word : dictionary){
+            if(str[0].indexOf(word) != -1){
+                for (String savedWord: list
+                     ) {
+                    if((word + savedWord).equals(str[0])){
+                        return word + "," + savedWord;
+                    }
+                    if((savedWord + word).equals(str[0])){
+                        return savedWord + "," + word;
+                    }
+                }
+
+                list.add(word);
+            }
+        }
+        return "not possible";
+    }
+
+    public static int arrayChallenge(int[] arr){
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if(j > i){
+                    if(arr[j] > arr[i]){
+                        list.add(arr[j] - arr[i]);
+                    }
+                }
+            }
+        }
+        return Collections.max(list);
+    }
+    public static String distinct(String str){
+        Set<Character> set = new HashSet<>();
+        String flag = "false";
+        for (int i = 0; i < str.length(); i++) {
+            set.add(str.charAt(i));
+        }
+
+       if(set.size() >= 10)
+       {flag = "true";}
+
+       return flag;
     }
 }

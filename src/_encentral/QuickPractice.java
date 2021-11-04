@@ -1,90 +1,107 @@
 package _encentral;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class QuickPractice {
 
+    public static void main(String[] args) {
+//        var str = stringChallenge(new String[]{"baseball", "a,all,b,ball,bas,base,cat,code,d,e,quit,z"});
+//        int[] as = {10, 9, 8, 5};
+//        var res = arrayChallenge(as);
+//
+//        System.out.println("Result: " + res);
+
+//        int[] arr = {5, 5, 3, 66, 4, 3, 6, 4, 5, 3};
+//        var result = peakElement(arr);
+//        System.out.println("Now the result is: " + result);
+
+        System.out.println("RES1: "+longest(453857));
+        System.out.println("RES2: "+longest(363223311));
+
+    }
+
+
+    // Array of string with
     public static String stringChallenge(String[] strArr) {
 
         String[] dictionary = strArr[1].split(",");
-        List<String> stringList = new ArrayList<>();
+        List<String> list = new ArrayList<>();
 
-        for (String word : dictionary){
-            if(strArr[0].indexOf(word) != -1){
+        for (String word : dictionary) {
 
-                for (String item : stringList){
-                    if( (word + item).equals(strArr[0])){
-                        return word + ","+ item;
+            if (strArr[0].indexOf(word) != -1) {
+
+                for (String eachWord : list) {
+                    if ((word + eachWord).equals(strArr[0])) {
+                        return word + "," + eachWord;
+
                     }
-
-                    if((item + word).equals(strArr[0])){
-                        return item + "," + word;
+                    if ((eachWord + word).equals(strArr[0])) {
+                        return eachWord + "," + word;
                     }
                 }
-                stringList.add(word);
+                list.add(word);
             }
         }
-
-
-        return "";
+        return "not possible";
     }
 
+    //profit or no profit
     public static Integer arrayChallenge(int[] arr) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (j > i) {
+                    if (arr[j] > arr[i]) {
+                        list.add(arr[j] - arr[i]);
 
-        List<Integer> listOfProfits = new ArrayList<>();
+                    }
+                }
+            }
 
-           for (int i = 0; i < arr.length; i++) {
-               for (int j = 0; j < arr.length; j++) {
-
-                   if (j > i) {
-                       if (arr[j] > arr[i]) {
-                           listOfProfits.add(arr[j] - arr[i]);
-                       }
-
-                   }
-
-               }
-           }
-
-        if(listOfProfits.size() > 1) return Collections.max(listOfProfits);
-        else return -1;
+        }
+        return list.size() > 1 ? Collections.max(list) : -1;
     }
 
 
     public static String Distinct(String str) {
-        List<Character> list = new ArrayList<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (!list.contains(str.charAt(i))){
-                list.add(str.charAt(i));
-            }
-        }
-        return (list.size() > 10) ? "true" : "false";
-    }
-public static int longest(int num){
 
+        return "";
+    }
+
+    public static int longest(int num) {
         int index = 0, highest = 0;
         String strNum = String.valueOf(num);
-    for (int i = 0; i < strNum.length(); i++) {
-        if(i < strNum.length() - 1){
-            int value = Integer.parseInt(String.valueOf(strNum.charAt(i) + strNum.charAt(i + 1)));
 
-            if(value >= highest){
+        for (int i = 0; i < strNum.length() - 1; i++) {
 
+//            if(i < strNum.length() - 1){
+            int value = Integer.parseInt(strNum.charAt(i) + "" + strNum.charAt(i + 1));
+            if (value >= highest) {
                 index = i;
                 highest = value;
             }
-        }
-    }
-    return Integer.parseInt(strNum.charAt(index) + "" + strNum.charAt(index + 1));
-}
 
-    public static void main(String[] args) {
-        var result = arrayChallenge(new int[]{14,20,4,12,5,11});
-//        System.out.println("Result: " + result);
-        String str = "babababa";
-        System.out.println(">>: "+ Distinct(str));
+//            }
+        }
+        return Integer.parseInt(strNum.charAt(index) + "" + strNum.charAt(index + 1));
+    }
+
+    public static String se(String str) {
+
+        return "";
+    }
+
+    public static int[] twoSum(int[] arr, int target) {
+        return new int[]{};
+
+    }
+
+    public static int[] twoSumm(int[] arr, int target) {
+        return new int[]{};
+    }
+
+    public static Integer peakElement(int[] arr) {
+        return 0;
     }
 }

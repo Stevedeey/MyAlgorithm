@@ -1,5 +1,6 @@
 package _encentral;
 
+import javax.xml.stream.events.Characters;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,8 +36,8 @@ Output: 8
 //        System.out.println("Profit: $"+s);
 //        var result = stringChallenge(new String[] {"abcgefd", "a,ab,abc,abcg,b,c,dog,e,efd,zzzz"});
 //        System.out.println("Result: "+ result);
-            System.out.println(longest(453857));
-            System.out.println(longest(363223311));
+            System.out.println("RES1: "+longest(453857));
+            System.out.println("RES2: "+longest(363223311));
 
             longest(89);
         }
@@ -71,8 +72,10 @@ Output: 8
             int index = 0;
             for (int i = 0; i < numStr.length(); i++) {
 
+
                 if (i < numStr.length() - 1) {
-                    int value = Integer.parseInt(String.valueOf(numStr.charAt(i) + numStr.charAt(i + 1)));
+
+                    int value = Integer.parseInt(String.valueOf(numStr.charAt(i)  + numStr.charAt(i+1)));
                     if (value >= highest) {
                         index = i;
                         highest = value;

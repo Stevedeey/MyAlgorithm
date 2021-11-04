@@ -23,9 +23,9 @@ public class _PeakElement {
                 return arr[mid];
             }
             else if (arr[mid] < arr[mid-1]){
-                end = arr[mid -1];
+                end = mid - 1;
             }
-            else start = arr[mid + 1];
+            else start = mid + 1;
         }
         return null;
     }
