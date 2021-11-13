@@ -2,8 +2,10 @@ package _encentral;
 
 import javax.xml.stream.events.Characters;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArrayChallenge2 {
 
@@ -36,10 +38,12 @@ Output: 8
 //        System.out.println("Profit: $"+s);
 //        var result = stringChallenge(new String[] {"abcgefd", "a,ab,abc,abcg,b,c,dog,e,efd,zzzz"});
 //        System.out.println("Result: "+ result);
-            System.out.println("RES1: "+longest(453857));
-            System.out.println("RES2: "+longest(363223311));
+//            System.out.println("RES1: "+longest(453857));
+//            System.out.println("RES2: "+longest(363223311));
 
-            longest(89);
+            reverse(Arrays.asList("Baby", "Apple", "Cat"));
+
+          //  longest(89);
         }
 
         public static int ArrayChallenge(int[] arr) {
@@ -76,7 +80,7 @@ Output: 8
                 if (i < numStr.length() - 1) {
 
                     int value = Integer.parseInt(String.valueOf(numStr.charAt(i)  + numStr.charAt(i+1)));
-                    if (value >= highest) {
+                    if (value > highest) {
                         index = i;
                         highest = value;
                     }
@@ -84,6 +88,18 @@ Output: 8
             }
 
             return Integer.parseInt((numStr.charAt(index) + "" + numStr.charAt(index + 1)));
+        }
+
+
+        public static void reverse(List<String> list) {
+            List<String> temp = new ArrayList<>(list.size());
+
+            for(int i = list.size() - 1; i>=0; i--){
+                String s = list.get(i);
+                temp.add(s);
+            }
+            temp.stream().map(i->i).collect(Collectors.toList()).forEach(System.out::println);
+
         }
 
 

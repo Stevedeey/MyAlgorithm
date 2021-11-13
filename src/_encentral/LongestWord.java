@@ -17,23 +17,20 @@ public class LongestWord {
 
     public static String LongestWord(String sen) {
 
-        String[] arr = sen.split(" ");
-        String result = "";
-        int count = 0;
+      String[] str = sen.split(" ");
+      String result = "";
+      int count = 0;
 
+      for (String each : str){
 
-        for (String each : arr){
-
-            each = each.replaceAll("[^A-Za-z]", "");
-
-            int eachLen = each.length();
-            if(eachLen > count) {
-                count = eachLen;
-                result = each;
-            }
-        }
-
-        return result;
+          each = each.replaceAll("[^A-Za-z]", "");
+          int eachCount = each.length();
+          if(eachCount > count){
+              count = eachCount;
+              result = each;
+          }
+      }
+      return result;
     }
 
     public static void main(String[] args) {

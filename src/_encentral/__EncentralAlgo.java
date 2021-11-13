@@ -8,10 +8,27 @@ public class __EncentralAlgo {
 //        int [] arr = { 66,2,7,11,15};
 //        var result = Arrays.toString(twoSum(arr,9));
 
-        String result = distinct("abcdefghijklmnop");
-        System.out.println("Result: "+ result);
+//        String result = distinct("abcdefghijklmnop");
+//        System.out.println("Result: "+ result);
+
+          System.out.println("RES1: "+longest(453857));
+//        System.out.println("RES2: "+longest(363223311));
+      //  fizzBuzz();
 
 
+    }
+
+    public static void fizzBuzz(){
+
+        for (int i = 1; i <= 15; i++) {
+            if(i % 5 == 0){
+                if(i % 3 == 0) System.out.println("FizzBuzz");
+                else System.out.println("Fizz");
+            }
+            else if(i % 3 == 0) System.out.println("Buzz");
+            else System.out.println(i);
+
+        }
     }
 
     public static int[] twoSum(int[] arr, int target){
@@ -40,6 +57,7 @@ public class __EncentralAlgo {
             if(i < strNum.length() - 1 ){
                 int value = Integer.parseInt(strNum.charAt(i) + "" +strNum.charAt(i + 1));
                 if(value >= highest){
+                    index = i;
                     highest = value;
                 }
             }
