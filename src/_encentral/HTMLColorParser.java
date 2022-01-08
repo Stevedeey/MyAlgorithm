@@ -73,26 +73,26 @@ public class HTMLColorParser {
     * */
 
 
-    private RGB hexadecimalToRGBConverter(String color) {
-        //#FFF
-        String red = "", green = "", blue = "";
-        if (color.length() == 4) {
-            red = color.substring(1, 2) + color.substring(1, 2);
-            green = color.substring(2, 3) + color.substring(2, 3);
-            blue = color.substring(3, 4) + color.substring(3, 4);
-        }
-
-        red = color.substring(1, 3);
-        green = color.substring(3, 5);
-        blue = color.substring(5, 7);
-        return new RGB(Integer.parseInt(red, 16),
-                Integer.parseInt(green, 16),
-                Integer.parseInt(blue, 16));
-    }
-
-    public RGB parseHexadecimal(String color) {
-        return hexadecimalToRGBConverter(presetColors.getOrDefault(color.toLowerCase(), color));
-    }
+//    private RGB hexadecimalToRGBConverter(String color) {
+//        //#FFF
+//        String red = "", green = "", blue = "";
+//        if (color.length() == 4) {
+//            red = color.substring(1, 2) + color.substring(1, 2);
+//            green = color.substring(2, 3) + color.substring(2, 3);
+//            blue = color.substring(3, 4) + color.substring(3, 4);
+//        }
+//
+//        red = color.substring(1, 3);
+//        green = color.substring(3, 5);
+//        blue = color.substring(5, 7);
+//        return new RGB(Integer.parseInt(red, 16),
+//                Integer.parseInt(green, 16),
+//                Integer.parseInt(blue, 16));
+//    }
+//
+//    public RGB parseHexadecimal(String color) {
+//        return hexadecimalToRGBConverter(presetColors.getOrDefault(color.toLowerCase(), color));
+//    }
 
 }
 
