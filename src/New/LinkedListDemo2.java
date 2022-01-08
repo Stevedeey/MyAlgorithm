@@ -94,9 +94,9 @@ public class LinkedListDemo2 {
 
     public static void main(String[] args) {
         LinkedListDemo2 linkedListDemo2 = new LinkedListDemo2();
-        linkedListDemo2.addFirst(42);
-        linkedListDemo2.addFirst(66);
-        linkedListDemo2.addFirst(42);
+        linkedListDemo2.addFirst(10);
+        linkedListDemo2.addFirst(20);
+        linkedListDemo2.addFirst(30);
 
         System.out.println(">>\n Those Added from head \n");
 
@@ -106,8 +106,13 @@ public class LinkedListDemo2 {
         linkedListDemo2.addLast(2);
         linkedListDemo2.addLast(3);
 
-
         System.out.println(">>Those Added from tail>>> ");
+
+        linkedListDemo2.printNodeItems();
+
+        System.out.println("PRINTING AFTER THE LAST ELEMENT WS REMOVED");
+
+        linkedListDemo2.deleteLast();
 
         linkedListDemo2.printNodeItems();
 

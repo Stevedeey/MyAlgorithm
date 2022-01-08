@@ -2,6 +2,7 @@ package _encentral;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class UniqueArray {
@@ -16,8 +17,7 @@ public class UniqueArray {
             if(!list.contains(arr[i])){
                 list.add(arr[i]);
             }
-
-
+            
         }
         return list.stream().mapToInt(i->i).toArray();
     }
@@ -26,4 +26,6 @@ public class UniqueArray {
           int arr[] = new int[]{3,5,3,4,5,5,4,3,5,6,7,8,9,0,-5};
           System.out.println(Arrays.toString(uniqueArray(arr)));
     }
+
+
 }

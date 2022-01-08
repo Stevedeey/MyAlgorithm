@@ -100,6 +100,7 @@ Output: 8
             }
             temp.stream().map(i->i).collect(Collectors.toList()).forEach(System.out::println);
 
+
         }
 
 
