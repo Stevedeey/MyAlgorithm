@@ -11,11 +11,28 @@ public class __EncentralAlgo {
 //        String result = distinct("abcdefghijklmnop");
 //        System.out.println("Result: "+ result);
 
-          System.out.println("RES1: "+longest(453857));
-//        System.out.println("RES2: "+longest(363223311));
+          //System.out.println("RES1: "+longest(453857));
+          System.out.println("RES2: "+largest(3632));
       //  fizzBuzz();
 
 
+    }
+    
+    public static Integer largest(Integer num){
+        int value = 0, highest = 0, index = 0;
+        String strNum = String.valueOf(num);
+        for (int i = 0; i < strNum.length(); i++) {
+            if(i < strNum.length() - 1){
+                value = Integer.parseInt(strNum.charAt(i) + "" + strNum.charAt(i + 1));
+                if(value >= highest){
+                    index = i;
+                    highest = value;
+                }
+            }
+            
+        }
+        return Integer.parseInt(strNum.charAt(index)+ "" +strNum.charAt(index+1));
+        
     }
 
     public static void fizzBuzz(){
