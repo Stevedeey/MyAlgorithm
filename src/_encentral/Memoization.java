@@ -5,26 +5,29 @@ import java.util.List;
 
 public class Memoization {
 
-     List<Integer> list = new ArrayList<>();
+    public static List<Integer> memoizeCache = new ArrayList<>();
 
     public List<Integer> getList() {
-        return list;
+        return memoizeCache;
     }
 
-    public  Integer calculate(Integer number){
+    public static Integer calculate(Integer number){
 
         if(number == 0){
             return 1;
         }else {
-            if(list.size() >= number){
+            if(memoizeCache.size() >= number){
                 System.out.println("Retrieved from cache: "+ number);
-                return list.get(number - 1);
+                return memoizeCache.get(number - 1); //factorial will return what was last stored in the list
             }
-            int factorial = number * calculate(number - 1);
-            list.add(factorial);
+            int temp = number - 1;
             System.out.println("Calculate for input: "+ number);
+            int factorial = number * calculate(temp);
+            memoizeCache.add(factorial);
             return factorial;
 
         }
     }
+
 }
+

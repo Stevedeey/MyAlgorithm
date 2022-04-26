@@ -5,16 +5,19 @@ import java.util.*;
 public class SimpleCalculastor {
     public static void main(String[] args) {
 
-        int n1 = 0, n2 = 1, n3 = 0;
+//        int n1 = 0, n2 = 1, n3 = 0;
+//
+//
+//        System.out.println(n1 + "" + n2);
+//        fibonacci(5);
 
 
-        System.out.println(n1 + "" + n2);
-        fibonacci(5);
+        String  s = "(1+(4+5+2)-3)+(6+8)";
 
+        System.out.println(calculate(s));
 
-
-        // System.out.println(calculate("222+(4+5+2)-3)+(6+8)"));
-        //System.out.println(calculate("2+(1+(4+5+2)-3)+(6+8)"));
+//         System.out.println(calculate("222+(4+5+2)-3)+(6+8)"));
+        System.out.println(calculate("2+(1+(4+5+2)-3)+(6+8)"));
 
 
 
@@ -44,13 +47,20 @@ public class SimpleCalculastor {
 
         String newString = String.valueOf(num);
         List<Integer> newInt = new ArrayList<>();
-        for(int i=0; i< newString.length()-1; i++){
+        for(int i = 0; i< newString.length()-1; i++){
             var t = newInt.add(Integer.valueOf(newString.charAt(i)+""+newString.charAt(i+1)));
         }
         Collections.sort(newInt);
         return newInt.get(newInt.size()-1);
     }
 
+    public static boolean dist(String arr){
+        Set<Character> set = new HashSet<>();
+        for (int i = 0; i < arr.length(); i++) {
+            set.add(arr.charAt(i));
+        }
+        return  set.size() >= 10 ? true : false;
+    }
 
 
 

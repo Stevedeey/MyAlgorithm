@@ -33,8 +33,8 @@ Output:abcg,efd
         var result = ArrayChallenge(new String[] {"abcgefd", "a,ab,abc,abcg,b,c,dog,e,efd,zzzz"});
         System.out.println("Result: "+ result);
 
-        var res = maxProfit(new int[]{10,9,8,7,4});
-        System.out.println("Result: $" + res);
+//        var res = maxProfit(new int[]{10,9,8,7,4});
+//        System.out.println("Result: $" + res);
     }
 
     public static String ArrayChallenge(String[] strArr) {

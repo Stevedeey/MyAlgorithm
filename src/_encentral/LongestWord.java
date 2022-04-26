@@ -24,6 +24,7 @@ public class LongestWord {
       for (String each : str){
 
           each = each.replaceAll("[^A-Za-z]", "");
+//          each = each.replaceAll("[^A-Za-z0-9]", "");
           int eachCount = each.length();
           if(eachCount > count){
               count = eachCount;
@@ -36,5 +37,6 @@ public class LongestWord {
     public static void main(String[] args) {
         System.out.println(LongestWord("fun&!! time"));
         System.out.println(LongestWord("I love dogs"));
+        System.out.println(LongestWord("Hello world123 567"));
     }
 }

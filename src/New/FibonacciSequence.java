@@ -20,6 +20,17 @@ public class FibonacciSequence {
 
     }
 
+    public static  void fibonacciSequence(int count){
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(n1);
+        list.add(n2);
+        for(int i = 0; i < count; i++){
+            n3 = list.get(i) + list.get(i+1);
+            list.add(n3);
+        }
+        System.out.println(list);
+    }
+
 
     public static int secondHighest(int[] arr) {
         int max = 0, preMax = 0;

@@ -10,6 +10,8 @@ public class QuickPractice {
 //        var res = arrayChallenge(as);
 //
 //        System.out.println("Result: " + res);
+        List<Integer>list = Arrays.asList(1,2,3,4,5);
+        System.out.println(calculate(list,2));
 
         int[] arr = {5, 5, 3, 66, 4, 3, 6, 4, 5, 3};
 
@@ -30,6 +32,10 @@ public class QuickPractice {
 //        System.out.println("RES1: "+longest(453857));
 //        System.out.println("RES2: "+longest(363223311));
 
+    }
+    public static List<Integer> calculate(List<Integer> number, int n){
+        Collections.rotate(number,n);
+        return number;
     }
 
 

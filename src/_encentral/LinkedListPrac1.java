@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 public class LinkedListPrac1 {
 
-    private class Node{
+    private class Node {
         private int data;
         private Node next;
 
@@ -18,19 +18,19 @@ public class LinkedListPrac1 {
 
     /**
      * Printing the elements in linkedlist
-     * */
+     */
 
-    private void printLinkedListElements(){
+    private void printLinkedListElements() {
         var current = head;
-        while(current != null){
+        while (current != null) {
             System.out.println(current.data);
             current = current.next;
         }
     }
 
-    private void addLast(int item){
+    private void addLast(int item) {
         var node = new Node(item);
-        if(head == null)
+        if (head == null)
             head = tail = node;
         else {
             tail.next = node;
@@ -39,24 +39,24 @@ public class LinkedListPrac1 {
 
     }
 
-    private void addFirst(int item){
+    private void addFirst(int item) {
 
         var node = new Node(item);
-        if(head == null)
+        if (head == null)
             head = tail = node;
-       else {
-           node.next = head;
-           head = node;
+        else {
+            node.next = head;
+            head = node;
 
         }
     }
 
-    private void removeFirst(){
+    private void removeFirst() {
 
-        if(head == null){
+        if (head == null) {
             throw new NoSuchElementException("No node");
         }
-        if(head == tail){
+        if (head == tail) {
             head = tail = null;
             return;
         }
@@ -65,31 +65,31 @@ public class LinkedListPrac1 {
         head = second;
     }
 
-    private void removeLast(){
+    private void removeLast() {
         var current = head;
-        
-        while (current!= null){
-            if(current.next == tail){
+
+        while (current != null) {
+            if (current.next == tail) {
                 break;
             }
             current = current.next;
         }
-        current.next = null;
         tail = current;
+        tail.next = null;
     }
 
-    private int indexOf(int value){
+    private int indexOf(int value) {
         var current = head;
         int index = 0;
-        while(current != null){
-            if(current.data == value) return  index;
+        while (current != null) {
+            if (current.data == value) return index;
             index++;
             current = current.next;
         }
         return -1;
     }
 
-    public boolean contains(int value){
+    public boolean contains(int value) {
         return indexOf(value) != -1;
     }
 
@@ -110,8 +110,8 @@ public class LinkedListPrac1 {
         var res = linkedListPrac1.indexOf(3);
         var boolRes = linkedListPrac1.contains(2);
 
-        System.out.println("Index: "+res);
-        System.out.println("Contains:  "+ boolRes);
+        System.out.println("Index: " + res);
+        System.out.println("Contains:  " + boolRes);
 
 //        System.out.println("The result after the last element has been removed");
 //        linkedListPrac1.printLinkedListElements();

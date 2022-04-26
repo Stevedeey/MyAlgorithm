@@ -14,8 +14,11 @@ public class Factorial {
     public static int FirstFactorial2(int num) {
         // code goes here
         if (num <= 1) return 1;
-        else return num * FirstFactorial(num - 1);
-
+        else {
+            int temp = num - 1;
+            int factorial = num * FirstFactorial2(temp);
+            return factorial;
+        }
     }
 
     public static void main(String[] args) {
