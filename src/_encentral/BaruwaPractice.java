@@ -7,11 +7,12 @@ import java.util.List;
 public class BaruwaPractice {
 
     public static void main(String[] args) {
-        var list = Arrays.asList(1,2,3,4, 7, 78, 9, 66,64,6);
-        int [] arr = {1,2,3,4, 7, 78, 9, 566,64,6};
-//        System.out.println(desMax(arr));
-        var ans = deakElement(list);
-        System.out.println("Answer: " + ans);
+//        var list = Arrays.asList(1,2,3,4, 7, 78, 9, 66,64,6);
+//        int [] arr = {1,2,3,4, 7, 78, 9, 566,64,6};
+////        System.out.println(desMax(arr));
+//        var ans = deakElement(list);
+//        System.out.println("Answer: " + ans);
+        System.out.println(factoriall(5));
 
     }
     public static int desMax(int[] arr){
@@ -66,21 +67,32 @@ public class BaruwaPractice {
         }
         }
 
+        public static int factoriall(int num){
+        if(num == 0){
+            return 1;
+
+        }else {
+            return num  * factoriall(num - 1);
+        }
+    }
 
        public static int facto(int num){
            List<Integer> list = new ArrayList<>();
            if(num == 0){
                return 1;
            }else{
-               if(num >= list.size()){
-                   return list.get(num - 1);
-               }
+//               if(num >= list.size()){
+//                   return list.get(num - 1);
+//               }
                int ans = num * facto(num - 1);
                list.add(ans);
+               System.out.println(ans);
                return ans;
 
            }
 
        }
+
+
 
 }
