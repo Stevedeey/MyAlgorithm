@@ -52,4 +52,22 @@ public class Array {
         }
     }
 
+    public static int secondMax(int[] arr) {
+        int premax = 0, max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                premax = max;
+                max = arr[i];
+            }
+            if (arr[i] > premax && arr[i] < max) {
+                premax = arr[i];
+            }
+        }
+        return premax;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(secondMax(new int[]{9909, 90, 7, 5, 3, 8, 10, 4, 9, 100, 900, 8, 9000}));
+
+    }
 }

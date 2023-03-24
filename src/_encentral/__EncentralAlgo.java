@@ -4,20 +4,18 @@ import java.util.*;
 
 public class __EncentralAlgo {
 
-    public static void main(String[] args) {
-//        int [] arr = { 66,2,7,11,15};
-//        var result = Arrays.toString(twoSum(arr,9));
 
-//        String result = distinct("abcdefghijklmnop");
-//        System.out.println("Result: "+ result);
-
-          //System.out.println("RES1: "+longest(453857));
-          System.out.println("RES2: "+largest(3632));
-      //  fizzBuzz();
-
+    public static int secondMax(int[] arr){
+        int max = 0, secondMax = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] > max){
+                secondMax = max;
+                max = arr[i];
+            }
+        }
+        return secondMax;
 
     }
-    
     public static Integer largest(Integer num){
         int value = 0, highest = 0, index = 0;
         String strNum = String.valueOf(num);
@@ -66,8 +64,27 @@ public class __EncentralAlgo {
         return new int[2];
     }
 
-    //Longest
-    private static int longest(int num){
+    private static int indexOfFirstRepeatinNo(int[] arr){
+
+        //initialize a var with -1
+        //loop through the list from the right
+        //create a hashSet
+        //check if eah no is found in th hashset
+        //if yes, set the var to the index, if no add to hashset
+        var set = new HashSet<>();
+        int repeat = -1;
+        for(int i = arr.length - 1; i >= 0; i--){
+
+            if(set.contains(arr[i])){
+                repeat = i;
+            }else {
+                set.add(arr[i]);
+            }
+        }
+        return repeat;
+    }
+
+    private static int largest22(int num){
         int highest = 0, index = 0;
         String strNum = String.valueOf(num);
         for (int i = 0; i < strNum.length(); i++) {
@@ -105,6 +122,24 @@ public class __EncentralAlgo {
         return "not possible";
     }
 
+    public static void main(String[] args) {
+        int [] arr = { 66,2,7,11, 15, 25, 25, 15, 7};
+        //var result = Arrays.toString(twoSum(arr,9));
+
+        var result = indexOfFirstRepeatinNo(arr);
+
+        System.out.println(result);
+
+//        String result = distinct("abcdefghijklmnop");
+//        System.out.println("Result: "+ result);
+
+        //System.out.println("RES1: "+longest(453857));
+//          System.out.println("RES2: "+largest(3632));
+        //  fizzBuzz();
+       // System.out.println(arrayChallenge(new int[]{7,5,3,8,10,4,9}));
+
+
+    }
     public static int arrayChallenge(int[] arr){
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
@@ -129,5 +164,19 @@ public class __EncentralAlgo {
        {flag = "true";}
 
        return flag;
+    }
+
+    public static int secondMaxw(int[] arr) {
+        int max = 0, preMax = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                preMax = max;
+                max = arr[i];
+            }
+            if (arr[i] < max && arr[i] > preMax) {
+                preMax = arr[i];
+            }
+        }
+        return preMax;
     }
 }
