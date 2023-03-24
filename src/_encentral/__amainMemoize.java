@@ -1,10 +1,17 @@
 package _encentral;
 
+import New.SimpleCalculastor;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class __amainMemoize {
     public static void main(String[] args) {
+
+        var simpleClass =  new SimpleCalculastor();
+        var s = simpleClass.getClass();
+        var d = SimpleCalculastor.class;
+
         Memoization memoization = new Memoization();
         System.out.println("Factorial of 3: ");
         System.out.println("************");
@@ -51,7 +58,7 @@ public class __amainMemoize {
           if(arr[i] > max){
               secondMax = max;
               max = arr[i];
-          }else if(arr[i] > secondMax){
+          }else if(arr[i] > secondMax && arr[i] < max){
               secondMax = arr[i];
           }
       }
