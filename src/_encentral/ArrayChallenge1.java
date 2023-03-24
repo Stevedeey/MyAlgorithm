@@ -1,8 +1,6 @@
 package _encentral;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class ArrayChallenge1 {
 
@@ -26,22 +24,122 @@ Output:abcg,efd
 
 
     *
-    *
+    *Find the first repeating element in array of integers.
+Input :
+Input: array[] = {10, 7, 8, 1, 8, 7, 6}
+
+1,7,7,8,8,10
+
+Set<Integer> set = new HashSet<>();
+for(int i)
+Output: 7 [7 is the first element actually repeats]
     * */
 
-    public static void main(String[] args) {
-        var result = ArrayChallenge(new String[] {"abcgefd", "a,ab,abc,abcg,b,c,dog,e,efd,zzzz"});
-        System.out.println("Result: "+ result);
+//    public static void main(String[] args) {
+////        countChars("abracadabra");
+//      var res =  firstRepeating(new int[]{10, 7, 8, 1, 8, 7, 6});
+//        System.out.println(res);
+//
+////        String[] arr = {"baseball", "a,all,b,ball,bas,base,cat,code,d,e,quit,z"};
+////        var res = ArrayChallenge(arr);
+////        System.out.println("Result: " + res);
+//    }
 
-//        var res = maxProfit(new int[]{10,9,8,7,4});
-//        System.out.println("Result: $" + res);
+    public static int firstRepeating(int[] arr) {
+        var list = convertArrayToList(arr);
+        Collections.sort(list);
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == list.get(i + 1)) {
+                return list.get(i);
+            }
+        }
+        return -1;
     }
 
-    public static String ArrayChallenge(String[] strArr) {
+    public static List<Integer> convertArrayToList(int array[]) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            list.add(array[i]);
+        }
+        return list;
+    }
+
+    private static void characterCounting(String str) {
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            if (map.containsKey(str.charAt(i))) {
+                //tio ba wa nibe tele, wa jade, that returns number and increment it..
+                int oldCount = map.get(str.charAt(i)) + 1;
+                map.put(str.charAt(i), oldCount);
+            } else {
+                map.put(str.charAt(i), 1);
+            }
+        }
+
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            System.out.printf("%s : %d %n", entry.getKey(), entry.getValue());
+//            if (entry.getValue() > 1) {
+//                System.out.printf("%s : %d %n", entry.getKey(), entry.getValue());
+//            }
+        }
+    }
+
+//    public static void main(String[] args) {
+//        String str = "Exercise Book".replaceAll("\\s+","").toLowerCase();
+//        System.out.println(str + "-> This is the new string");
+//        characterCounting(str);
+//    }
+
+//    public static void countChars(String str) {
+//
+//        Map<Character, Integer> map = new HashMap<>();
+//        for (int i = 0; i < str.length(); i++) {
+//            if (map.containsKey(str.charAt(i))) {
+//                int oldCount = map.get(str.charAt(i)) + 1;
+//                map.put(str.charAt(i), oldCount);
+//            } else {
+//                map.put(str.charAt(i), 1);
+//            }
+//        }
+//        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+//            if (entry.getValue() > 1) {
+//                System.out.printf("%s : %d %n", entry.getKey(), entry.getValue());
+//            }
+//        }
+//    }
+
+
+    public static int findFirstRepeating(int[] arr) {
+
+        Set<Integer> set = new HashSet<>();
+        int min = -1;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (set.contains(arr[i])) {
+                min = i;
+            } else {
+                set.add(arr[i]);
+            }
+        }
+        return min != -1 ? arr[min] : min;
+
+    }
+
+    public static int ff(int[] arr) {
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (set.contains(arr[i])) {
+                return arr[i];
+            } else set.add(arr[i]);
+        }
+        return -1;
+    }
+
+    public static String arrayChallenge(String[] strArr) {
         List<String> result = new ArrayList<>();
         String[] dictionary = strArr[1].split(",");
         for (String data : dictionary) {
-            if (strArr[0].indexOf(data) != -1) {
+            if (strArr[0].contains(data)) {
                 for (String each : result) {
                     if ((data + each).equals(strArr[0])) {
                         return data + "," + each;
@@ -56,6 +154,41 @@ Output:abcg,efd
         }
 
         return "not possible";
+    }
+
+    //Input: s = "(1+(4+5+2)-3)+(6+8)"
+    public static int calculator(String str) {
+        Stack<Integer> stack = new Stack<>();
+        int sum = 0;
+        int sign = 1;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) > '0' && str.charAt(i) < '9') {
+                int num = 0;
+                while (i < str.length() && str.charAt(i) > '0' && str.charAt(i) < '0') {
+                    num = num * 10 - '0';
+                    i++;
+                }
+                sum += num * sign;
+                i--;
+            }
+            if (str.charAt(i) == '+') {
+                sign = 1;
+            }
+            if (str.charAt(i) == '-') {
+                sign = -1;
+            }
+            if (str.charAt(i) == '(') {
+                stack.push(sum);
+                stack.push(sign);
+                sum = 0;
+                sign = 1;
+            }
+            if (str.charAt(i) == ')') {
+                sum = stack.pop() * sum;
+                sum += stack.pop();
+            }
+        }
+        return sum;
     }
 
     private static Integer maxProfit(int[] arr) {
@@ -74,4 +207,55 @@ Output:abcg,efd
     }
 
 
-}
+    public static int find(int[] arr) {
+        int min = -1;
+        Set<Integer> set = new HashSet<>();
+
+        for (int i = arr.length; i >= 0; i--) {
+            if (set.contains(arr[i])) {
+                min = i;
+                return arr[i];
+            } else
+                set.add(arr[i]);
+        }
+        return -1;
+    }
+
+    public static String myArrayChallenge(String[] arr) {
+//        String[] arr = new String[] {"abcgefd", "a,ab,abc,abcg,b,c,dog,e,efd,zzzz"};
+        String[] dictionary = arr[1].split(",");
+        List<String> newArray = new ArrayList<>();
+        for (String each : dictionary) {
+            if (arr[0].contains(each)) {
+                for (String data : newArray) {
+                    if ((each + data).equals(arr[0])) return each + "," + data;
+                    if ((data + each).equals(arr[0])) return data + "," + each;
+
+                }
+                newArray.add(each);
+            }
+        }
+        return "not possible";
+    }
+            //Joyo  //    // Find duplicate character in a string
+//    public static void countChars(String str) {
+//        Map<Character, Integer> map = new HashMap<>();
+//        var charArray = str.toCharArray();
+//        for (Character character : charArray) {
+//            if (map.containsKey(character)) {
+//                int count = map.get(character) + 1;
+//                map.put(character, count);
+//            } else {
+//                map.put(character, 1);
+//            }
+//        }
+//        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+//            if(entry.getValue() > 1){
+//                System.out.printf("%s : %d %n", entry.getKey(), entry.getValue());
+//            }
+//        }
+//
+//    }
+
+
+        }
