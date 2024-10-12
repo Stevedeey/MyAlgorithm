@@ -1,0 +1,94 @@
+//Delete a minimal number of elements from an array so that all elements of the modified array are equal to one another.
+
+//Example arr = [1,2,2,3] 
+
+
+
+/**Delete the  2 elements 1 and 3 leaving arr = [2,2] . If both twos plus either 1  or the 1 are deleted, it takes 3 deletions to leave  either [3]  or [1] . The minimum number of deletions is 2 . 
+
+Function Description
+
+Complete the equalizeArray function in the editor below.
+
+equalizeArray has the following parameter(s):
+
+int arr[n]: an array of integers
+Returns
+
+int: the minimum number of deletions required
+Input Format
+
+The first line contains an integer , the number of elements in .
+The next line contains  space-separated integers . **/
+
+//My Brute force
+
+
+  public static int equalizeArray(List<Integer> arr) {
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        for (int i = 0; i < arr.size(); i++) {
+            Integer item = arr.get(i);
+            if (frequencyMap.containsKey(item)) {
+                frequencyMap.put(item, frequencyMap.get(item) + 1);
+            } else {
+                frequencyMap.put(item, 1);
+            }
+        }
+
+        int maxKey = -1;
+        int maxFrequency = -1;
+        for (Map.Entry<Integer, Integer> each : frequencyMap.entrySet()) {
+            Integer eachKey = each.getKey();
+            Integer eachValue = each.getValue();
+            if (eachValue > maxFrequency) {
+                maxFrequency = eachValue;
+                maxKey = eachKey;
+            }
+        }
+
+        int remaining = 0;
+        for (Integer each : arr) {
+            if(each != maxKey) remaining++;
+        }
+
+        return remaining;
+    }
+
+
+//Improved
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution {
+    
+    public static int equalizeArray(int[] arr) {
+        // Step 1: Count the frequency of each element
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        
+        for (int num : arr) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+        
+        // Step 2: Find the maximum frequency
+        int maxFrequency = 0;
+        for (int frequency : frequencyMap.values()) {
+            if (frequency > maxFrequency) {
+                maxFrequency = frequency;
+            }
+        }
+        
+        // Step 3: Calculate the minimum number of deletions
+        // Total number of deletions is total elements - max frequency
+        return arr.length - maxFrequency;
+    }
+
+    public static void main(String[] args) {
+        // Example array
+        int[] arr = {1, 2, 2, 3};
+        
+        // Call the equalizeArray method and print the result
+        int result = equalizeArray(arr);
+        System.out.println("Minimum number of deletions: " + result);
+    }
+}
